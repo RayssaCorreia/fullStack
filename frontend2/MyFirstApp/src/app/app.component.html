@@ -1,0 +1,81 @@
+<!-- <div class="pado-card">
+  <h1>{{getData()[0].title}}</h1>
+  <p>{{getData()[0].id}}</p>
+  <img [src]="getData()[0].imageUrl" alt="">
+</div> -->
+
+<body class="principal">
+
+    <div class="ui secondary  menu">
+      <a class="item">
+        Home
+      </a>
+      <a class="item">
+        Messages
+      </a>
+      <a class="item">
+        Friends
+      </a>
+      <div class="right menu">
+        <div class="item">
+          <div class="ui icon input">
+            <input (change)="setTitle($event)" type="text" placeholder="Search...">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+        <a class="ui item active">
+          Logout
+        </a>
+      </div>
+    </div>
+    
+    <div> 
+      <h1>{{getTitle()}}</h1>
+    </div>
+    
+    <app-card></app-card>
+    
+    <div class ="container">
+      <div *ngFor= "let myData of getData()"class="pado-card">
+        <h1>{{myData.title}}</h1>
+        <p>{{myData.id}}</p>
+        <img [src]="myData.imageUrl" alt="">
+      </div>
+    </div>
+
+    <div *ngFor= "let myLista of getLista()" class="ui card">
+      <a class="image" href="#">
+        <img [src]="myLista.foto">
+      </a>
+      <div class="content">
+        <a class="header" href="#">{{myLista.nome}}</a>
+        <div class="meta">
+          <h3>Ingredientes</h3>
+          <p>{{myLista.ingredientes}}</p>
+          <h3>Modo de Preparo</h3>
+          <p>{{myLista.preparo}}</p>
+        </div>
+      </div>
+  </div>
+    
+    <div class="ui three buttons">
+      <button class="ui active button">One</button>
+      <button class="ui button">Two</button>
+      <button class="ui button">Three</button>
+    </div>
+    
+    
+    <!-- 
+    <div>
+      <label for= "">title:</label>
+      <input (change)="setTitle($event)" type="text">
+    </div> -->
+    
+    <div>
+      <input [value]="getTitle()" type="text" disabled>
+    </div>
+</body>
+
+
+
+<router-outlet></router-outlet>
