@@ -1,0 +1,10 @@
+<div class="principal">
+    <div class ="container">
+        <div *ngFor= "let myData of getData()"class="pado-card">
+            <h1>{{myData.title}}</h1>
+            <img [src]="myData.imageUrl" alt="">
+            <h6>{{myData.descricao}}</h6>
+        </div>
+    </div>
+    
+</div>
