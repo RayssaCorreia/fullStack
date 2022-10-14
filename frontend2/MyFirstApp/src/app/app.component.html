@@ -4,7 +4,7 @@
   <img [src]="getData()[0].imageUrl" alt="">
 </div> -->
 
-<body class="principal">
+<!-- <body class="principal">
 
     <div class="ui secondary  menu">
       <a class="item">
@@ -31,11 +31,17 @@
     
     <div> 
       <h1>{{getTitle()}}</h1>
-    </div>
+    </div> -->
     
-    <app-card></app-card>
+    <app-card
+    *ngFor="let myData of getData()"
+     [title]="myData.title" 
+     [id]="myData.id"
+     [imageUrl]="myData.imageUrl" 
+    >
+  </app-card>
     
-    <div class ="container">
+    <!-- <div class ="container">
       <div *ngFor= "let myData of getData()"class="pado-card">
         <h1>{{myData.title}}</h1>
         <p>{{myData.id}}</p>
@@ -65,16 +71,16 @@
     </div>
     
     
-    <!-- 
+   //
     <div>
       <label for= "">title:</label>
       <input (change)="setTitle($event)" type="text">
-    </div> -->
+    </div> //
     
     <div>
       <input [value]="getTitle()" type="text" disabled>
     </div>
-</body>
+</body> -->
 
 
 
